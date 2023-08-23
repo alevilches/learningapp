@@ -1,0 +1,15 @@
+<h1>Courses#index</h1>
+<p>Find me in app/views/courses/index.html.erb</p>
+
+<% @courses.each do |course| %>
+<div class="course">
+    <%= link_to(course) do %>
+    <%= course.name %> <br>
+    <%= image_tag(course.image) %>
+    <% end %>
+</div>
+<% end %>
+
+<div class="new">
+   <%= link_to "Create new course", new_course_path %>
+</div>

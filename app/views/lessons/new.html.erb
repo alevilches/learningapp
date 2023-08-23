@@ -1,0 +1,18 @@
+<h1>Lessons#new</h1>
+<p>Find me in app/views/lessons/new.html.erb</p>
+<h2>Create a lesson and associate it to a Course</h2>
+
+<%= form_with model: @lesson do |f| %>
+<%= f.label(:title) %>
+<%= f.text_field(:title) %>
+<%= f.label(:question) %>
+<%= f.text_field(:question) %>
+<%= f.label("Enter the correct answer") %>
+<%= f.text_field(:answer) %>
+<%= f.label("Image or thumbnail") %>
+<%= f.text_field(:image) %>
+<%= f.label(:course_id) %>
+<%= f.collection_select(:course_id, Course.all, :id, :name, prompt: true) %>
+<%= f.submit("Create lesson") %>
+
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Lessons#show</h1>
+<p>Find me in app/views/lessons/show.html.erb</p>
+
+
+<h2>Course: <%= @course.name %></h2>
+
+<h3>Lesson: <%= @lesson.title %></h3>
+
+<div class="question">
+    Question: <i><%= @lesson.question %></i> <br>
+    <%= image_tag(@lesson.image) %>
+    
+</div>
+
+<div class="answer-title">
+    Enter your answer:
+    <div class="answer-box">
+       <%= form_with url: "answers/check", remote: "true" do |f| %>
+       <%= f.text_field(:answer) %>
+       <%= f.submit("send answer") %>
+       <% end %>
+
+    </div>
+    
+    <div class="result">
+       
+    </div>
+</div>

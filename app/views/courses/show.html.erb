@@ -1,0 +1,14 @@
+<h1>Courses#show</h1>
+<p>Find me in app/views/courses/show.html.erb</p>
+<h2>Course name "<%= @course.name %>"</h2>
+<h3>Lessons in this course</h3>
+
+<p>
+<ul> Lessons:
+<% @course.lessons.each do |lesson|%>
+  <%= link_to(lesson) do %>
+  <li><%= lesson.title %></li>
+  <% end %>
+  <% end %>
+</ul>
+</p>
